@@ -5,7 +5,7 @@ public class ChestStealer {
         if (state) {
             System.out.println("Stealing from chest...");
         } else {
-            System.out.println("Not stealing from chest...");
+            System.out.println("Stopped stealing from chest.");
         }
     }
 }
