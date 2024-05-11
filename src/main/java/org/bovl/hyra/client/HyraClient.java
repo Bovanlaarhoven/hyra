@@ -4,7 +4,6 @@ import modules.movement.AutoSprint;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.MinecraftClient;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -20,6 +19,6 @@ public class HyraClient implements ClientModInitializer {
     }
 
     public void onTick() {
-
+        AutoSprint.toggle(true);
     }
 }
