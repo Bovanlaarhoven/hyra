@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "hyra",
+  "version": "${version}",
+  "name": "hyra",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/bovanlaarhoven/hyra"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/hyra/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "org.bovl.hyra.client.HyraClient"
+    ],
+    "main": [
+      "org.bovl.hyra.Hyra"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
