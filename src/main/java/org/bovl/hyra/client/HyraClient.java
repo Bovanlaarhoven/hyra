@@ -1,6 +1,7 @@
 package org.bovl.hyra.client;
 
 import modules.movement.AutoSprint;
+import modules.misc.ChestStealer;
 import org.lwjgl.glfw.GLFW;
 import utils.keybind;
 import net.fabricmc.api.ClientModInitializer;
@@ -18,10 +19,12 @@ public class HyraClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         keybind.createKeybind("auto_sprint", GLFW.GLFW_KEY_C);
+        keybind.createKeybind("chest_stealer", GLFW.GLFW_KEY_M);
         executorService.scheduleAtFixedRate(this::onTick, 0, 50, TimeUnit.MILLISECONDS);
     }
 
     public void onTick() {
         AutoSprint.toggle(keybind.isToggled("auto_sprint"));
+        ChestStealer.toggle(keybind.isToggled("chest_stealer"));
     }
 }
