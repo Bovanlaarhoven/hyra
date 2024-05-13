@@ -1,6 +1,7 @@
 package org.bovl.hyra.client;
 
 import modules.movement.AutoSprint;
+import modules.combat.Killaura;
 import modules.misc.ChestStealer;
 import org.lwjgl.glfw.GLFW;
 import utils.keybind;
@@ -20,11 +21,13 @@ public class HyraClient implements ClientModInitializer {
     public void onInitializeClient() {
         keybind.createKeybind("auto_sprint", GLFW.GLFW_KEY_C);
         keybind.createKeybind("chest_stealer", GLFW.GLFW_KEY_M);
+        keybind.createKeybind("kill_aura", GLFW.GLFW_KEY_G);
         executorService.scheduleAtFixedRate(this::onTick, 0, 50, TimeUnit.MILLISECONDS);
     }
 
     public void onTick() {
         AutoSprint.toggle(keybind.isToggled("auto_sprint"));
         ChestStealer.toggle(keybind.isToggled("chest_stealer"));
+        Killaura.toggle(keybind.isToggled("kill_aura"));
     }
 }
